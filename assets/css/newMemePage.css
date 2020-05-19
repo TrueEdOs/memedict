@@ -1,0 +1,112 @@
+#new-meme-section{
+	background-color: rgba(58, 139, 247, 0.6);
+	border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow:  -5px 5px 10px #c238eb, 5px 5px 10px #c238eb,  5px -5px 10px #c238eb, -5px -5px 10px #c238eb;	
+	
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto; 
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 150px; 
+}
+
+#new-meme-name{
+	margin-top: 10px;
+	width: 100%;
+	color: #000;
+	font-size: 1.5em;
+	border-radius: 5px;
+	height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: -10px;
+	background-color: #7e90e8;
+}
+
+.new-meme-h{
+	margin-top: 20px; 
+	font-size: 2em;
+	text-align: center;
+	color: #bb5cec;
+}
+
+#new-meme-description{
+	margin-top: 10px;
+	width: 100%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #000;
+	height: 200px;
+	margin-left: -10px;
+	background-color: #7e90e8;
+}
+
+#picture-load{
+	display: flex;
+	flex-direction: row;
+}
+
+#picture-load-link{
+	margin-left: 20px; 
+	margin-top: 25px;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+
+#upload-file-button-label{
+	margin-top: 10px; 
+	font-size: 1.5em;
+	background-color: #9470e5;
+	padding: 5px;
+	color: #000;
+	border-radius: 5px;
+	border: 2px solid #000;
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+    vertical-align: middle;
+    margin-top: 20px;
+    height: 30px;
+}
+
+
+#picture-load-button:hover{
+	background-color: #8460d5;
+}
+
+#picture-load-button:active{
+	background-color: #7450c5;
+}
+
+#new-meme-section-inner{
+	width: 50%;
+	margin: 0 auto;
+	min-width: 450px;
+}
+
+#upload-file-button{
+	visibility: hidden;
+}
+
+#new-meme-submit{
+	margin: 30px 0;
+	width: 100%;
+	color: #000;
+	padding: 10px;
+	font-size: 1.5em;
+	border-radius: 5px;
+	background-color: #c33175;
+	border: 1px solid #d71d99;
+}
+
+#new-meme-submit:hover{
+	background-color: #b32165;
+}
+
+#new-meme-submit:active{
+	background-color: #a31155;
+}
