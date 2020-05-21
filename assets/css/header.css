@@ -8,8 +8,8 @@ header {
 #main-header {
 	font-family: 'Bungee Shade';
 	font-size: 6em;
-  margin-top: -0.5em;
   margin-left: 0.25em;
+  line-height: 1em;
   color: var(--primaryColor);
 }
 

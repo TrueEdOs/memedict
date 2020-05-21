@@ -28,6 +28,7 @@
 .new-meme-h{
 	margin-top: 20px; 
 	font-size: 2em;
+	font-weight: bold;
 	text-align: center;
 	color: #bb5cec;
 }
@@ -86,6 +87,8 @@
 	width: 50%;
 	margin: 0 auto;
 	min-width: 450px;
+	display: flex;
+	flex-direction: column;
 }
 
 #upload-file-button{
