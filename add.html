@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>MEMEDICT</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Eduard Budniak">
+    <meta name="description" content="Yet another meme dictionary">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/indexPage.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/newMemePage.css">
+</head>
+
+<body>
+    <div id="back-page"></div>
+    <header>
+        <div id="header-titles">
+            <h1 id="main-header">MEMEDICT</h1>
+            <h2 id="main-sub-header">ミームでは信頼する</h2>
+        </div>
+        <nav class="header-buttons-nav">
+            <a class="header-button" href="index.html">All memes</a>
+            <a class="header-button" href="index.html">My memes</a>
+            <a class="header-button" href="index.html">Leave heaven</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <div id="search-container">
+                <i class="fa fa-search search-icon"></i>
+                <input id="search-input" placeholder="One step remains...">
+            </div>
+            <section id="new-meme-section">
+                <div id="new-meme-section-inner">
+                    <label class="new-meme-h" for="new-meme-name">Meme name</label>
+                    <input id="new-meme-name" placeholder="Mememememe...">
+                    <label class="new-meme-h" for="new-meme-description">Description</label>
+                    <textarea id="new-meme-description" cols="40" rows="5"></textarea>
+                    <div id="picture-load">
+                    	<label class="picture-load-button" id="upload-file-button-label">Load picture
+                			<input type='file' id="upload-file-button">
+            			</label>
+                        
+                        <p id="picture-load-link" href="">picture link</p>
+                    </div>
+                    <button id="new-meme-submit">Submit</button>
+                <div>
+            </section>
+        </div>
+    </main>
+</body>

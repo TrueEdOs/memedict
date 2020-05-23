@@ -1,0 +1,144 @@
+main{
+	width: 100%;
+}
+
+#content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#search-container{
+	display: inline-flex;
+	margin: 20px auto;
+}
+
+.search-icon{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: -26px;
+	margin-left: 13px;
+	z-index: 1;
+}
+
+#search-input{
+	font-size: 1.2em;
+	padding-left: 30px; 
+	width: 600px;
+	height: 30px;
+	z-index: 0;
+	color: var(--primaryColor);
+	background-color: var(--primaryDarkColor);
+	border-radius: 200px;
+	border: 2px solid var(--primaryColor);
+}
+
+.meme{
+	padding: 10px;
+	width: 600px;
+	margin: 20px auto;
+	border: 2px solid #000;
+	transition: 0.5s;
+	background-color: rgba(58, 139, 247, 0.4); 
+	
+}
+.meme:hover{
+	transition: 0.5s;
+	 transform: scale(1.05);
+	 background-color: rgba(58, 139, 247, 0.9);
+}
+
+.meme-text:before{
+	content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet maximus dolor, eu semper lorem facilisis ut. Vivamus lacinia tristique diam, at interdum ex ultrices vel. Donec imperdiet massa sed sapien commodo vehicula. Vestibulum auctor quis purus in lacinia. Duis sit amet tellus vitae metus malesuada tristique.";
+}
+
+#daymeme{
+	box-shadow: -5px 5px 10px #c238eb, 5px 5px 10px #c238eb,  5px -5px 10px #c238eb, -5px -5px 10px #c238eb;	
+	border: 2px solid #000;
+}
+
+.meme-head{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.meme-name{
+	color:  var(--primaryColor);
+}
+
+.vote-buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+#add-meme-button-div{
+	display: flex;
+	flex-direction: row;
+	align-content: flex-end;
+	position: sticky;
+	margin-left: 10%;
+	bottom: -10px;
+	width: 200px
+}
+
+.add-meme-button{
+	background-color: rgba(58, 139, 247, 0.1);
+	padding: 20px 20px; 
+	border: 2px solid #000;
+	border-radius: 10px;
+	font-size: 1.5em;
+}
+.add-meme-button:hover{
+	background-color: rgba(58, 139, 247, 0.3);
+}
+
+.report-button{
+	background:url(../icons/error.png) no-repeat;
+	background-size: 30px 30px;
+    cursor: pointer;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+
+.vote-buttons{
+	margin-top: 20px;
+}
+
+.like{
+	background:url(../icons/plus.png) no-repeat;
+	background-size: 30px 30px;
+    cursor: pointer;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+
+.dislike{
+	background:url(../icons/minus.png) no-repeat;
+	background-size: 30px 30px;
+    cursor: pointer;
+    border: none;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 1024px){
+	#add-meme-button-div{
+		width: 100%;
+		background-color: #f274d3;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;   
+	}
+
+	.add-meme-button{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
