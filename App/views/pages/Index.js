@@ -1,24 +1,24 @@
-import * as Actions from  './../../services/Actions.js'
+import * as Utils from  './../../services/Utils.js'
 
 
 let Index = {
     render: async () => {
         let view =  /*html*/`
-<body>
-    <main>
-        <div id="content">
-            <div id="search-container">
-                <i class="fa fa-search search-icon"></i>
-                <input id="search-input" placeholder="One step remains...">
-            </div>
-            <ol id='meme-container'></ol>
+        <body>
+            <main>
+                <div id="content">
+                    <div id="search-container">
+                        <i class="fa fa-search search-icon"></i>
+                        <input id="search-input" placeholder="One step remains...">
+                    </div>
+                    <ol id='meme-container'></ol>
 
-            <div id="add-meme-button-div">
-                <a class="add-meme-button" href="/#/new">Add meme</a>
-            </div>
-        </div>
-    </main>
-</body>
+                    <div id="add-meme-button-div">
+                        <a class="add-meme-button" href="/#/new">Add meme</a>
+                    </div>
+                </div>
+            </main>
+        </body>
         `
         return view
     },
@@ -37,28 +37,28 @@ let Index = {
             }
         });
 
-        Actions.getMemes(query)
+        Utils.getMemes(query)
         .then(function (memes) {
             var specialMeme = memes[Math.floor(Math.random()*memes.length)];
-            document.getElementById("meme-container").appendChild(Actions.renderSpecialMeme(specialMeme));
+            document.getElementById("meme-container").appendChild(Utils.renderSpecialMeme(specialMeme));
 
             for (const meme of memes.reverse()) {
                 console.log(meme.picture)
-                document.getElementById("meme-container").appendChild(Actions.renderMeme(meme));
+                document.getElementById("meme-container").appendChild(Utils.renderMeme(meme));
 
-                document.getElementById("like_btn_" + meme.id).addEventListener("click", () => {
+                document.getElementById("like_" + meme.id).addEventListener("click", () => {
                     event.preventDefault();
-                    Actions.like(event.target.getAttribute("data-attr"));
+                    Utils.like(event.target.getAttribute("data-attr"));
                 });
 
-                document.getElementById("dislike_btn_" + meme.id).addEventListener("click", () => {
+                document.getElementById("dislike_" + meme.id).addEventListener("click", () => {
                     event.preventDefault();
-                    Actions.dislike(event.target.getAttribute("data-attr"));
+                    Utils.dislike(event.target.getAttribute("data-attr"));
                 });
 
-                document.getElementById("report_btn_" + meme.id).addEventListener("click", () => {
+                document.getElementById("report_" + meme.id).addEventListener("click", () => {
                     event.preventDefault();
-                    Actions.report(event.target.getAttribute("data-attr"));
+                    Utils.report(event.target.getAttribute("data-attr"));
                 });
             }
         })

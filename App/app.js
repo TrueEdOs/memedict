@@ -1,6 +1,6 @@
 "use strict";
 
-import * as Actions from  './../../services/Actions.js'
+import * as Utils from  './../../services/Utils.js'
 
 import Index from './views/pages/Index.js'
 import MyMemes from './views/pages/MyMemes.js'
@@ -29,13 +29,6 @@ catch (error) {
     alert(error);
 }
 
-// var ref = firebase.app().database().ref();
-// var testRef = ref.child('test/');
-// testRef.set({ first: 'Ada', last: 'Lovelace' })
-// testRef.on('value', function(snapshot) {
-//     alert(snapshot.val().first)
-// })
-
 const routes = {
     '/': Index,
     '/login': Login,
@@ -50,7 +43,7 @@ const router = async () => {
     const content = document.getElementById('page_container');
     header.innerHTML = await Header.render();
     await Header.after_render();
-    let request = Actions.parseRequestURL()
+    let request = Utils.parseRequestURL()
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
     let page = routes[parsedURL] ? routes[parsedURL] : Error404
     content.innerHTML = await page.render();

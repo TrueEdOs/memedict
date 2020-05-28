@@ -2,20 +2,19 @@ let Login = {
     render: async () => {
         let view =  /*html*/`
         <body>
-    
-        <main>
-            <div id="content">
-                <section id="auth-section">
-                    <label class="center-header" id="email-helper" for="email-enter">Nickname</label>
-                    <input class="info-input" id="email-enter" placeholder="Choose wisely...">
-                    <label class="center-header" id="password-helper" for="password-enter">Password</label>
-                    <input type="password" class="info-input" id="password-enter" placeholder="Use qwertyui...">
-                    <a id="reg-link" href="/#/sign-up">First time? Register!</a>
-                    <button id="login-submit" class="red-button">Login</button> 
-                </section>
-            </div>
-        </main>
-    </body>
+            <main>
+                <div id="content">
+                    <section id="auth-section">
+                        <label class="center-header" id="email-helper" for="email-enter">Nickname</label>
+                        <input class="info-input" id="email-enter" placeholder="Choose wisely...">
+                        <label class="center-header" id="password-helper" for="password-enter">Password</label>
+                        <input type="password" class="info-input" id="password-enter" placeholder="Use qwertyui...">
+                        <a id="reg-link" href="/#/sign-up">First time? Register!</a>
+                        <button id="login-submit" class="red-button">Login</button> 
+                    </section>
+                </div>
+            </main>
+        </body>
         `
         return view
     },
@@ -25,12 +24,11 @@ let Login = {
             let email = document.getElementById("email-enter");
             let pass  = document.getElementById("password-enter");
              if (email.value ==='' | pass.value === '' ) {
-                alert (`Fields can't be empty`)
-            }   
-            else {
+                alert (`NOT EMPTY FIELDS!`)
+            } else {
                 firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
                     .then(function(firebaseUser) {
-                        alert(`User with email ${email.value} was successfully logged in!`)
+                        alert(`GOOD CHOICE!`)
                         window.location.href = '/#/';
                     })
                     .catch(function(err) {

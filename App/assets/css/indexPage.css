@@ -66,6 +66,10 @@ main{
 	color:  var(--primaryColor);
 }
 
+.meme-text {
+	width: 550px;
+}
+
 .vote-buttons{
 	display: flex;
 	flex-direction: row;

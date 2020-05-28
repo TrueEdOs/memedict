@@ -1,4 +1,4 @@
-import * as Actions from  './../../services/Actions.js'
+import * as Utils from  './../../services/Utils.js'
 
 let AddMeme = {
     render: async () => {
@@ -31,7 +31,7 @@ let AddMeme = {
         return view
     },
     after_render: async () => {
-        await Actions.getCurrentAuthState().then(function (email) {
+        await Utils.getCurrentAuthState().then(function (email) {
             const canvas = document.getElementById('preview');
             const fileInput = document.getElementById('upload-file-button');
             const asciiImage = document.getElementById('ascii');
@@ -75,8 +75,8 @@ let AddMeme = {
                 return grayScales;
             };
             
-            const MAXIMUM_WIDTH = 40;
-            const MAXIMUM_HEIGHT = 40;
+            const MAXIMUM_WIDTH = 24;
+            const MAXIMUM_HEIGHT = 32;
             const clampDimensions = (width, height) => {
                 const rectifiedWidth = Math.floor(getFontRatio() * width);
             

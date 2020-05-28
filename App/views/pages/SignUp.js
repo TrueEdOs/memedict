@@ -1,29 +1,25 @@
 let SignUp = {
     render: async () => {
         let view =  /*html*/`
-    <body>
-        <main>
-            <div id="content">
-                    <i class="fa fa-search search-icon"></i>
-                    <input id="search-input" placeholder="One step remains...">
+        <body>
+            <main>
+                <div id="content">
+                    <section id="auth-section">
+                            <label class="center-header" id="email-helper" for="login-enter">Your email</label>
+                            <input class="info-input" id="email-enter" placeholder="Email...">
+                            <label class="center-header" id="password-helper" for="password-enter">Password</label>
+                            <input type="password" class="info-input" id="password-enter" placeholder="Use qwertyui...">
+                            <label class="center-header" id="repeat-password-helper" >Repeat password</label>
+                            <input type="password" class="info-input" id="repeat-password-enter" placeholder="Repeat qwertyui...">
+                            
+                            <button id="login-submit" class="red-button">Register</button> 
+                    </section>
                 </div>
-                <section id="auth-section">
-                        <label class="center-header" id="email-helper" for="login-enter">Your email</label>
-                        <input class="info-input" id="email-enter" placeholder="Email...">
-                        <label class="center-header" id="password-helper" for="password-enter">Password</label>
-                        <input type="password" class="info-input" id="password-enter" placeholder="Use qwertyui...">
-                        <label class="center-header" id="repeat-password-helper" >Repeat password</label>
-                        <input type="password" class="info-input" id="repeat-password-enter" placeholder="Repeat qwertyui...">
-                        
-                        <button id="login-submit" class="red-button">Register</button> 
-                </section>
-            </div>
-        </main>
-    </body>
+            </main>
+        </body>
         `
         return view
     },
-
     after_render: async () => {
         document.getElementById("login-submit").addEventListener ("click",  () => {
             event.preventDefault();
@@ -39,7 +35,7 @@ let SignUp = {
             else {
                 firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
                     .then(function(firebaseUser) {
-                        alert(`User with email ${email.value} was successfully submitted!`)
+                        alert(`REGISTRED!`)
                         window.location.href = '/#/';
                     })
                     .catch(function (err) {

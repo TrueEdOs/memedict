@@ -1,5 +1,3 @@
-
-
 export function parseRequestURL () {
   let url = location.hash.slice(1).toLowerCase() || '/';
   let r = url.split("/")
@@ -33,14 +31,14 @@ export function renderMeme(meme) {
     view.innerHTML = /*html*/`
         <div class="meme-head">
             <h1 class="meme-name">${meme.name}</h1>
-            <button class="report-button" data-attr="${meme.id}" type="submit" id="report_btn_${meme.id}"></button>
+            <button class="report-button" data-attr="${meme.id}" type="submit" id="report_${meme.id}"></button>
         </div>
         <p class="meme-text">${meme.description}</p>
         <pre>${meme.picture}</pre>
         <div class="vote-buttons">
-            <button class="like" data-attr="${meme.id}" type="submit" id="like_btn_${meme.id}"></button>
+            <button class="like" data-attr="${meme.id}" type="submit" id="like_${meme.id}"></button>
             <p class="rating" id="rating_${meme.id}">${meme.rating}</p>
-            <button class="dislike" data-attr="${meme.id}" type="submit" id="dislike_btn_${meme.id}"></button>
+            <button class="dislike" data-attr="${meme.id}" type="submit" id="dislike_${meme.id}"></button>
         </div>`;
     return view;
 }
@@ -55,7 +53,7 @@ export function like(memeId) {
             var disliked = snapshot.val().disliked;
 
             if (liked.indexOf(currentUser.email) > -1) {
-              document.getElementById("like_btn_" + memeId).classList.remove("clicked");
+              document.getElementById("like_" + memeId).classList.remove("clicked");
               rating -= 1;
               liked.splice(liked.indexOf(currentUser.email), 1);
             } else {
@@ -63,11 +61,11 @@ export function like(memeId) {
 
               if (disliked.indexOf(currentUser.email) > -1) {
                 rating += 1;
-                document.getElementById("dislike_btn_" + memeId).classList.remove("clicked");
+                document.getElementById("dislike_" + memeId).classList.remove("clicked");
                 disliked.splice(disliked.indexOf(currentUser.email), 1);
               }
               rating += 1;
-              document.getElementById("like_btn_" + memeId).classList.add("clicked");
+              document.getElementById("like_" + memeId).classList.add("clicked");
             }
 
             
@@ -93,7 +91,7 @@ export function dislike(memeId) {
           var disliked = snapshot.val().disliked;
 
           if (disliked.indexOf(currentUser.email) > -1) {
-            document.getElementById("dislike_btn_" + memeId).classList.remove("clicked");
+            document.getElementById("dislike_" + memeId).classList.remove("clicked");
             rating += 1;
             disliked.splice(liked.indexOf(currentUser.email), 1);
           } else {
@@ -101,11 +99,11 @@ export function dislike(memeId) {
 
             if (liked.indexOf(currentUser.email) > -1) {
               rating -= 1;
-              document.getElementById("like_btn_" + memeId).classList.remove("clicked");
+              document.getElementById("like_" + memeId).classList.remove("clicked");
               liked.splice(disliked.indexOf(currentUser.email), 1);
             }
             rating -= 1;
-            document.getElementById("dislike_btn_" + memeId).classList.add("clicked");
+            document.getElementById("dislike_" + memeId).classList.add("clicked");
           }
 
           
