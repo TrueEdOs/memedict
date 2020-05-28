@@ -1,0 +1,86 @@
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Aldrich';
+}
+
+.center-header{
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: #bb5cec;
+}
+
+.red-button{
+  color: #000;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  background-color: #c33175;
+  border: 1px solid #d71d99;
+}
+
+.red-button:hover{
+  background-color: #b32165;
+}
+
+.red-button:active{
+  background-color: #a31155;
+}
+
+a{
+  text-decoration: none;
+}
+
+#not404 {
+  font-size: 4em;
+  color: red;
+}
+
+:root {
+  /*header, active links*/
+  --primaryColor: #c238eb;
+  /*background*/	
+  --backgroundLightColor: #fff;
+  /*songs and playlists desc text*/
+  --primaryDarkColor: #3a8bf7;
+  /*frames*/
+  --color4: #e00000;
+  /**/
+  --color5: #ba0020;
+  /*text, links*/
+  --color6: #000000;
+}
+
+pre {
+  font-family: 'Courier New', 'monospace';
+  margin: 1rem auto;
+  font-size: 8px;
+  line-height: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.clicked {
+  width: 40px;
+  height: 40px;
+}
+
+body {
+  background: linear-gradient(to bottom, #57bef6 50%, #f274d3 80%) no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh;
+}
+@media only screen and (max-width: 1024px){
+  body{
+    font-size: 20px;
+  }
+}
+
+.hide {
+  display: none;
+}
