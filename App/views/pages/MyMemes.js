@@ -7,7 +7,50 @@ let MyMemes = {
         <body>
             <main>
                 <div id="content">
-                    <ol id='meme-container'></ol>
+                    <ol id='meme-container'>
+                    <article class="meme-ghost">
+                        <div class="meme-head">
+                            <h1 class="meme-name-ghost"></h1>
+                            <button class="button-ghost"></button>
+                        </div>
+                        <p class="meme-text-ghost"></p>
+                    </article>
+                    <article class="meme-ghost">
+                        <div class="meme-head">
+                            <h1 class="meme-name-ghost"></h1>
+                            <button class="button-ghost"></button>
+                        </div>
+                        <p class="meme-text-ghost"></p>
+                    </article>
+                    <article class="meme-ghost">
+                        <div class="meme-head">
+                            <h1 class="meme-name-ghost"></h1>
+                            <button class="button-ghost"></button>
+                        </div>
+                        <p class="meme-text-ghost"></p>
+                    </article>
+                    <article class="meme-ghost">
+                        <div class="meme-head">
+                            <h1 class="meme-name-ghost"></h1>
+                            <button class="button-ghost"></button>
+                        </div>
+                        <p class="meme-text-ghost"></p>
+                    </article>
+                    <article class="meme-ghost">
+                        <div class="meme-head">
+                            <h1 class="meme-name-ghost"></h1>
+                            <button class="button-ghost"></button>
+                        </div>
+                        <p class="meme-text-ghost"></p>
+                    </article>
+                    <article class="meme-ghost">
+                        <div class="meme-head">
+                            <h1 class="meme-name-ghost"></h1>
+                            <button class="button-ghost"></button>
+                        </div>
+                        <p class="meme-text-ghost"></p>
+                    </article>
+                </ol>
 
                     <div id="add-meme-button-div">
                         <a class="add-meme-button" href="/#/new">Add meme</a>
@@ -27,6 +70,7 @@ let MyMemes = {
                 var query = memesRef.orderByChild('author').equalTo(email);
                 Utils.getMemes(query)
                 .then(function (memes) {
+                    document.getElementById("meme-container").innerHTML = ""
                     for (const meme of memes.reverse()) {
                         console.log(meme.picture)
                         document.getElementById("meme-container").appendChild(Utils.renderMeme(meme));

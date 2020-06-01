@@ -43,6 +43,14 @@ export function renderMeme(meme) {
     return view;
 }
 
+export function renderPredict(meme) {
+  const view = document.createElement('a');
+  view.className += 'predict-href';
+  view.href +=  "/#/search/" + meme.name;
+  view.innerHTML = /*html*/`${meme.name}`;
+  return view;
+}
+
 export function like(memeId) {
   firebase.auth().onAuthStateChanged(function(currentUser) {
       if (currentUser) {

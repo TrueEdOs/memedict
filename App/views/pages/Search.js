@@ -8,10 +8,54 @@ let Search = {
             <main>
                 <div id="content">
                     <div id="search-container">
+                        <ol id="predict-block"></ol>
                         <i class="fa fa-search search-icon"></i>
                         <input id="search-input" placeholder="One step remains...">
                     </div>
-                    <ol id='meme-container'></ol>
+                    <ol id='meme-container'>
+                        <article class="meme-ghost">
+                            <div class="meme-head">
+                                <h1 class="meme-name-ghost"></h1>
+                                <button class="button-ghost"></button>
+                            </div>
+                            <p class="meme-text-ghost"></p>
+                        </article>
+                        <article class="meme-ghost">
+                            <div class="meme-head">
+                                <h1 class="meme-name-ghost"></h1>
+                                <button class="button-ghost"></button>
+                            </div>
+                            <p class="meme-text-ghost"></p>
+                        </article>
+                        <article class="meme-ghost">
+                            <div class="meme-head">
+                                <h1 class="meme-name-ghost"></h1>
+                                <button class="button-ghost"></button>
+                            </div>
+                            <p class="meme-text-ghost"></p>
+                        </article>
+                        <article class="meme-ghost">
+                            <div class="meme-head">
+                                <h1 class="meme-name-ghost"></h1>
+                                <button class="button-ghost"></button>
+                            </div>
+                            <p class="meme-text-ghost"></p>
+                        </article>
+                        <article class="meme-ghost">
+                            <div class="meme-head">
+                                <h1 class="meme-name-ghost"></h1>
+                                <button class="button-ghost"></button>
+                            </div>
+                            <p class="meme-text-ghost"></p>
+                        </article>
+                        <article class="meme-ghost">
+                            <div class="meme-head">
+                                <h1 class="meme-name-ghost"></h1>
+                                <button class="button-ghost"></button>
+                            </div>
+                            <p class="meme-text-ghost"></p>
+                        </article>
+                    </ol>
 
                     <div id="add-meme-button-div">
                         <a class="add-meme-button" href="/#/new">Add meme</a>
@@ -30,15 +74,39 @@ let Search = {
         var query = memesRef.orderByChild('name').equalTo(requestId);
         
         const searchbar = document.getElementById("search-input");
+
+        var allmemes = null;
+        Utils.getMemes(memesRef.orderByChild('timestamp')).then(function (memes) {
+            allmemes = memes;
+        })
+
         searchbar.addEventListener("keyup", function(event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
                 document.location.href = "/#/search/" + searchbar.value;
+            } else {
+                if (allmemes != null) {
+                    document.getElementById("predict-block").innerHTML = ""
+                    var len = searchbar.value.length
+                    if (len > 0) {
+                        var count = 3;
+                        for (const meme of allmemes) {
+                            if (meme.name.substring(0, len) == searchbar.value) {
+                                count--
+                                document.getElementById("predict-block").appendChild(Utils.renderPredict(meme))
+                                if (count == 0) {
+                                    break
+                                }
+                            }
+                        }
+                    }
+                }
             }
         });
 
         Utils.getMemes(query)
         .then(function (memes) {
+            document.getElementById("meme-container").innerHTML = ""
             for (const meme of memes.reverse()) {
                 console.log(meme.picture)
                 document.getElementById("meme-container").appendChild(Utils.renderMeme(meme));
