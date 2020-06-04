@@ -1,0 +1,46 @@
+#auth-section{
+	background-color: rgba(58, 139, 247, 0.6);
+	border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow:  -5px 5px 10px #c238eb, 5px 5px 10px #c238eb,  5px -5px 10px #c238eb, -5px -5px 10px #c238eb;	
+	width: 41.5%;
+	min-width: 600px;
+	margin-left: auto;
+	margin-right: auto; 
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 150px; 
+}
+
+.info-input{
+	margin: 10px auto 0 auto;
+	width: 60%;
+	color: #000;
+	font-size: 1.5em;
+	border-radius: 5px;
+	height: 30px;
+	padding-left: 10px;
+	background-color: #7e90e8;
+}
+
+#login-helper{
+	margin-top: 15px; 
+	margin-bottom: 25px;
+}
+
+#password-helper{
+	margin-top: 15px; 
+	margin-bottom: 25px;
+}
+
+#login-submit{
+	margin: 30px auto 20px auto;
+	width: 30%;
+	min-width: 300px;
+}
+
+#reg-link{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 1.5em;
+}
